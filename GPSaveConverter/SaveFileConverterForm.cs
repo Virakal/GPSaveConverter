@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -691,11 +691,11 @@ namespace GPSaveConverter
             }
         }
 
-        private void copySaveFileTablesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void copyPackageIDToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(this.ActiveGame.PackageName);
         }
-        private void copyPackageIDToolStripMenuItem_Click(object sender, EventArgs e)
+        private void copySaveFileTablesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
 
