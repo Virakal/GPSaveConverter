@@ -127,9 +127,9 @@ namespace GPSaveConverter
 
                 DataGridViewColumn userIconColumn = new System.Windows.Forms.DataGridViewImageColumn();
                 DataGridViewColumn userNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-                // 
+                //
                 // UserIcon
-                // 
+                //
                     userIconColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
                 userIconColumn.DataPropertyName = "UserIcon";
                 userIconColumn.HeaderText = "User Icon";
@@ -138,9 +138,9 @@ namespace GPSaveConverter
                 userIconColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
                 userIconColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
                 userIconColumn.Width = 32;
-                // 
+                //
                 // UserName
-                // 
+                //
                 userNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
                 userNameColumn.DataPropertyName = "UserName";
                 userNameColumn.HeaderText = "User Name";
@@ -205,7 +205,7 @@ namespace GPSaveConverter
             }
         }
 
-        
+
 
         private async void SaveFileConverterForm_Load(object sender, EventArgs e)
         {
@@ -319,7 +319,7 @@ namespace GPSaveConverter
                 return false;
             }
 
-            if (ActiveGame.TargetProfiles != null) 
+            if (ActiveGame.TargetProfiles != null)
             {
                 foreach (NonXboxProfile p in ActiveGame.TargetProfiles)
                 {
@@ -378,7 +378,7 @@ namespace GPSaveConverter
                 this.xboxFilesTable.DataSource = currentContainer.getFileList();
             }
             else { logger.Info("Transfer canceled"); }
-            
+
         }
 
         private async Task moveFilesFromXbox(System.Collections.IEnumerable rows)
@@ -408,7 +408,7 @@ namespace GPSaveConverter
                         }
                     } while (res == DialogResult.Retry);
                 }
-                
+
                 logger.Info("Transfer complete");
 
                 // Reload to refresh UI.
@@ -452,7 +452,7 @@ namespace GPSaveConverter
             ClearForm();
 
             ActiveGame = (Library.GameInfo)this.packagesDataGridView.SelectedRows[0].DataBoundItem;
-            
+
             // Do this before working with non-UWP data or the fetch won't be awaited.
             if (!ActiveGame.NonUWPDataPopulated)
             {
@@ -469,7 +469,7 @@ namespace GPSaveConverter
             this.fileTranslationListBox.Items.AddRange(ActiveGame.FileTranslations.ToArray());
             this.fileTranslationListBox.Enabled = true;
 
-            
+
 
             await fetchXboxProfiles();
 
@@ -602,7 +602,7 @@ namespace GPSaveConverter
         private void addTranslationButton_Click(object sender, EventArgs e)
         {
             Library.FileTranslation newItem = Library.FileTranslation.getDefaultInstance();
-            
+
             ActiveGame.FileTranslations.Add(newItem);
             fileTranslationListBox.Items.Add(newItem);
         }
