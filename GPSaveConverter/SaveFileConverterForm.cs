@@ -731,7 +731,7 @@ namespace GPSaveConverter
                 sb.AppendLine(ActiveGame.BaseNonXboxSaveLocation);
                 sb.AppendLine("| File Path |");
                 sb.AppendLine("| --------  |");
-                List<NonXboxFileInfo> nonXboxFileList = (List<NonXboxFileInfo>)this.xboxFilesTable.DataSource;
+                List<NonXboxFileInfo> nonXboxFileList = (List<NonXboxFileInfo>)this.nonXboxFilesTable.DataSource;
                 foreach (NonXboxFileInfo xboxFileInfo in nonXboxFileList)
                 {
                     sb.Append("| ");
